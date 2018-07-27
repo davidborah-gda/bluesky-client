@@ -1,1 +1,41 @@
+.App-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightskyblue;
+  height: 80vh;
+  width: 100vw;
+  margin-top: 20px;
+}
 
+.Inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgoldenrodyellow;
+  height: 50vh;
+  width: 50vw;
+}
+
+.Icon {
+  height: 50%;
+}
+
+.input {
+  height: 1.5rem;
+  width: 5rem;
+}
+
+.Lat-Lon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.button {
+  background-color: green;
+  height: 1.5rem;
+  width: 8rem;
+}
