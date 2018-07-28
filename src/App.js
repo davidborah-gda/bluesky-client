@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route
+} from 'react-router-dom';
+import Weather from './Weather';
+
+
+const Home = (props) => (
+  <div className="Inner">
+        <img className="Icon" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/rain-icon.png" />
+        <button className="button" onClick={props.onSetLocation}>Get Weather Forcast</button>
+        </div>
+);
 
 class App extends Component {
 
@@ -74,6 +88,9 @@ class App extends Component {
         </div>
         <button className="button" onClick={this.setLocation.bind(this)}>Get Weather Forcast</button>
         </div>
+        <Home onSetLocation = {this.setLocation.bind(this)} lat={this.state.lat} lon={this.state.lon} />
+        {/* <Route exact path='/' component={Home} /> */}
+        {/* <Route path='/weather' component={Weather} /> */}
       </div>
     );
   }
