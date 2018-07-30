@@ -1,13 +1,15 @@
 /* eslint-disable */
 
 import React from 'react';
-import './Weather.css';
-
+import './weather.css';
 
 const Weather = (props) => (
-    <div className="Weather-container">
-      This is where the weather data is displayed.
-    </div>
+  <div>
+  <div className="Weather-container">
+  Your LAT:{props.lat} Your LON:{props.lon}
+  Current Weather Summary: {props.weather.currently.summary}
+  </div>
+  </div>
 )
 
 export default Weather;

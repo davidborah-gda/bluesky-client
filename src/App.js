@@ -6,15 +6,21 @@ import {
   Link,
   Route
 } from 'react-router-dom';
-import Weather from './Weather';
+import Weather from './weather';
+
 
 
 const Home = (props) => (
   <div className="Inner">
         <img className="Icon" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/rain-icon.png" />
-        <button className="button" onClick={props.onSetLocation}>Get Weather Forcast</button>
+        <div className="Lat-Lon">
+        <input onChange={props.onLatChange} className="input" placeholder="LAT" value={props.lat} />
+        <input onChange={props.onLonChange} className="input" placeholder="LON" value={props.lon} />
+        </div>
+        <Link to='/weather'><button className="button" onClick={props.onSetLocation}>Get Weather Forecast</button></Link>
         </div>
 );
+
 
 class App extends Component {
 
@@ -80,17 +86,21 @@ class App extends Component {
     }
     return (
       <div className="App-container">
-        <div className="Inner">
-        <img className="Icon" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/rain-icon.png" />
-        <div className="Lat-Lon">
-        <input onChange={this.setLat.bind(this)} className="input" placeholder="LAT" value={this.state.lat} />
-        <input onChange={this.setLon.bind(this)} className="input" placeholder="LAT" value={this.state.lon} />
-        </div>
-        <button className="button" onClick={this.setLocation.bind(this)}>Get Weather Forcast</button>
-        </div>
-        <Home onSetLocation = {this.setLocation.bind(this)} lat={this.state.lat} lon={this.state.lon} />
-        {/* <Route exact path='/' component={Home} /> */}
-        {/* <Route path='/weather' component={Weather} /> */}
+        
+        <Route exact path='/' render = { (routerProps) => {
+          return <Home onLatChange = {this.setLat.bind(this)}
+                      onLonChange = {this.setLon.bind(this)}
+                      onSetLocation = {this.setLocation.bind(this)}
+                      lat={this.state.lat}
+                      lon={this.state.lon}
+                       {...routerProps} />
+        }} />
+        <Route path='/weather' render ={ (routerProps) => {
+          return <Weather lat={this.state.lat}
+                          lon={this.state.lon}
+                          weather={this.state.weather}
+                          {...routerProps} />
+        } } />
       </div>
     );
   }
