@@ -8,9 +8,40 @@
 
 .wi {
    font-size: 3rem;
-   color: white;
+   color: blue;
 }
 
 .Location-title {
     color: yellow;
+}
+
+.Icon-container {
+    background-color: yellow;
+    padding: 10px 10px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+.Location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    width: 100%;
+}
+
+.Data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: silver;
+    width: 100%;
+}
+
+.Temp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gold;
+    width: 100%;
 }
