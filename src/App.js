@@ -17,7 +17,7 @@ const Home = (props) => (
         <input onChange={props.onLatChange} className="input" placeholder="LAT" value={props.lat} />
         <input onChange={props.onLonChange} className="input" placeholder="LON" value={props.lon} />
         </div>
-        <Link to='/weather'><button className="button" onClick={props.onSetLocation}>Get Weather Forecast</button></Link>
+        <Link to='/weather'><button className="button" onClick={props.onSetLocation}>Get Forecast</button></Link>
         </div>
 );
 
