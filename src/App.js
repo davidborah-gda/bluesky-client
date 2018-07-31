@@ -17,6 +17,10 @@ const Home = (props) => (
         <input onChange={props.onLatChange} className="input" placeholder="LAT" value={props.lat} />
         <input onChange={props.onLonChange} className="input" placeholder="LON" value={props.lon} />
         </div>
+        <div className="CityState-input">
+        <p>OR input your city and state</p>
+        <input placeholder="City, State" />
+        </div>
         <Link to='/weather'><button className="button" onClick={props.onSetLocation}>Get Forecast</button></Link>
         </div>
 );
