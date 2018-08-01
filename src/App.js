@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
@@ -8,7 +9,7 @@ import {
 } from 'react-router-dom';
 import Weather from './weather';
 
-
+const baseUrl = `https://infinite-lowlands-78570.herokuapp.com`
 
 const Home = (props) => (
   <div className="Inner">
@@ -46,7 +47,7 @@ class App extends Component {
   setLocation() {
   const { lat,lon } = this.state;
 
-    const url = `/forcast/location/${lat},${lon}`;
+    const url = `${baseUrl}/forecast/location/${lat},${lon}`;
     axios.get(url).then((response) => {
       this.setState({
         weather: response.data,
