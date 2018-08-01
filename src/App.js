@@ -92,7 +92,7 @@ class App extends Component {
     return (
       <div className="App-container">
         
-        <Route exact path='/' render = { (routerProps) => {
+        <Route exact path={process.env.PUBLIC_URL + '/'} render = { (routerProps) => {
           return <Home onLatChange = {this.setLat.bind(this)}
                       onLonChange = {this.setLon.bind(this)}
                       onSetLocation = {this.setLocation.bind(this)}
@@ -100,7 +100,7 @@ class App extends Component {
                       lon={this.state.lon}
                        {...routerProps} />
         }} />
-        <Route path='/weather' render ={ (routerProps) => {
+        <Route path={process.env.PUBLIC_URL + '/weather'} render ={ (routerProps) => {
           return <Weather lat={this.state.lat}
                           lon={this.state.lon}
                           weather={this.state.weather}
