@@ -65,7 +65,7 @@ class App extends Component {
     this.setState({
       lat: evt.target.value
   });
-}
+} 
 
   setLon(evt){
     this.setState({
